@@ -1,0 +1,8 @@
+@model MyApp.Web.Models.ViewModels.ClienteVM
+@{ ViewBag.Title = "Eliminar Cliente"; Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h3>¿Deseas eliminar al cliente @Model.Nombre?</h3>
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m=>m.Id)
+<button class="btn btn-danger">Eliminar</button>
+}

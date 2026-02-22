@@ -1,0 +1,10 @@
+@model MyApp.Web.Models.ViewModels.ClienteVM
+@{ ViewBag.Title = "Editar Cliente"; Layout = "~/Views/Shared/_Layout.cshtml"; }
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+@Html.HiddenFor(m=>m.Id)
+<div class="form-group">@Html.LabelFor(m=>m.Nombre) @Html.TextBoxFor(m=>m.Nombre, new {@class="form-control"})</div>
+<div class="form-group">@Html.LabelFor(m=>m.Correo) @Html.TextBoxFor(m=>m.Correo, new {@class="form-control"})</div>
+<div class="form-check">@Html.CheckBoxFor(m=>m.Activo) @Html.LabelFor(m=>m.Activo)</div>
+<button class="btn btn-primary">Actualizar</button>
+}
